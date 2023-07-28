@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="hBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testappjavatoandroid.Button_List">
+   <children>
+      <Label fx:id="label" prefHeight="40.0" style="-fx-border-color: Black;" text="Label" />
+      <TextField fx:id="textField" prefHeight="40.0" style="-fx-border-color: Black;" />
+      <Button fx:id="explorateur" mnemonicParsing="false" onAction="#explorateur" prefHeight="40.0" style="-fx-border-color: Black;">
+         <graphic>
+            <ImageView fx:id="explorateur_image" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/explorateur-de-fichiers.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#supprimer" prefHeight="40.0" style="-fx-border-color: Black;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/poubelle.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <VBox alignment="CENTER">
+         <children>
+            <Button minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#buttonUP" prefHeight="20.0" prefWidth="37.0" style="-fx-border-color: Black;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                     <image>
+                        <Image url="@../../../image/fleche.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#butttonDOWN" prefHeight="20.0" prefWidth="37.0" style="-fx-border-color: Black;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/fleche.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>

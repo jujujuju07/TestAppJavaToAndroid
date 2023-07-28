@@ -260,55 +260,18 @@ public class HelloController extends Application implements Initializable{
     @Override
     public void start(Stage stage) throws Exception {
         this.stage = stage;
-        stage.setTitle("titre");
+        stage.setTitle("Modifier button");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("modifie_Button.fxml"));
 
         Parent root = loader.load();
-
-        ArrayList<List_Button> classArrayList = new ArrayList<>();
-
-        ScrollPane scrollPane = (ScrollPane) root.lookup("#scrollPaneG1");
-        Button volumePlus = (Button) scrollPane.getContent().lookup("#volumePlus");
-        Button volumeMoins = (Button) scrollPane.getContent().lookup("#volumeMoins");
-        Button lancerAPP = (Button) scrollPane.getContent().lookup("#lancerAPP");
-        Button lancerSon = (Button) scrollPane.getContent().lookup("#lancerSon");
-
-
-
-        VBox vBoxM = (VBox) root.lookup("#vBoxM");
-
-        volumePlus.setOnAction(event -> {
-            List_Button listButton = new List_Button();
-            HBox hBox = listButton.buttonVolumePlus(vBoxM,"");
-            classArrayList.add(listButton);
-            vBoxM.getChildren().add(hBox);
-        });
-        volumeMoins.setOnAction(event -> {
-            List_Button listButton = new List_Button();
-            HBox hBox = listButton.buttonVolumeMoins(vBoxM,"");
-            classArrayList.add(listButton);
-            vBoxM.getChildren().add(hBox);
-        });
-        lancerAPP.setOnAction(event -> {
-            List_Button listButton = new List_Button();
-            HBox hBox = listButton.buttonLancerAPP(vBoxM,"");
-            classArrayList.add(listButton);
-            vBoxM.getChildren().add(hBox);
-        });
-        lancerSon.setOnAction(event -> {
-            List_Button listButton = new List_Button();
-            HBox hBox = listButton.buttonLancerSon(vBoxM,"");
-            classArrayList.add(listButton);
-            vBoxM.getChildren().add(hBox);
-        });
-
         Modifier_Button modifier_button = loader.getController();
         modifier_button.donner(donnerListList.get(selectionlistlistcase).get(selectionlistcase), execute.get(selectionemplacement));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.showAndWait();stage.setOnCloseRequest(event -> modifier_button.save());
+        stage.showAndWait();
+        stage.setOnCloseRequest(event -> modifier_button.save());
         updateButton();
 
     }
